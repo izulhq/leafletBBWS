@@ -14,7 +14,7 @@ function StripedRowExample() {
           paddingBottom: "8px",
         }}
       >
-        Stasiun Pabelan
+        Stasiun Pabelan 2
       </h1>
       <Table
         striped
