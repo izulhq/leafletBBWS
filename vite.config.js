@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import viteCompression from "vite-plugin-compression";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [
@@ -12,6 +13,15 @@ export default defineConfig({
       algorithm: "gzip",
       ext: ".gz",
     }),
+    tailwindcss(),
   ],
-  // ... other configurations
+  server: {
+    proxy: {
+      "/klimatologi": {
+        target: "https://hidrologi.bbws-bsolo.net",
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
 });
